@@ -1,0 +1,53 @@
+﻿@model IEnumerable<gokul.Models.executive>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Index</h1>
+
+<p class="text-white">
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ExecutiveName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhnNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExecutiveName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.OrderTypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhnNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ExecutiveId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ExecutiveId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ExecutiveId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

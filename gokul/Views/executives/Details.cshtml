@@ -1,0 +1,42 @@
+﻿@model gokul.Models.executive
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-white">Details</h1>
+
+<div>
+    <h4 class="text-white">executive</h4>
+    <hr />
+    <dl class="row text-white">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ExecutiveName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ExecutiveName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Order)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Order.OrderTypeId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhnNo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhnNo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="text-white"  asp-action="Edit" asp-route-id="@Model?.ExecutiveId">Edit</a> |
+    <a class="text-white"  asp-action="Index">Back to List</a>
+</div>

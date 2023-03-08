@@ -1,0 +1,35 @@
+﻿@model IEnumerable<gokul.Models.order>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-white">Index</h1>
+
+<p class="text-white">
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table text-white">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OrderType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrderTypeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrderTypeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrderTypeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

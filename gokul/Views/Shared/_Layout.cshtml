@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @* <title>@ViewData["Title"] - web</title>*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/nav.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web.styles.css" asp-append-version="true" />
+
+    <title>Go Corier NAV</title>
+    @*<link rel="stylesheet" href="navbar.css" />*@
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2 class="logo">
+                <i class='bx bxl-flutter'></i> Go  Courier
+            </h2>
+        </div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm aling-items-left navbar-light">
+            <ul class="align-items-left">
+                <li>  <a class="nav-link text-dark text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li>   <a class="nav-link text-dark text-white" asp-area="" asp-controller="customer" asp-action="Create"> Book Shipment</a></li>
+                <li>  <a class="nav-link text-dark text-white" asp-area="" asp-controller="customer" asp-action="Index">Executive</a></li>          
+</ul>
+            @*<li> <a href="#"> Home</a></li>
+            <li> <a href="#"> Home</a></li>*@
+            @*<ul>
+                <li>  <a class="nav-link text-dark text-white" asp-area="Identity" asp-page="/Account/Login">Login</a> </li>
+
+                <li>    <a class="nav-link text-dark text-white" asp-area="Identity" asp-page="/Account/Register">Register</a> </li>
+            </ul>*@
+
+            
+
+            <partial name="_LoginPartial" />
+
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @*<footer class="border-top footer text-muted">
+    <div class="container text-white">
+    &copy; 2023 - web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+
+    </footer>*@
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>
